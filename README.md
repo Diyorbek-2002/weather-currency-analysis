@@ -1,32 +1,48 @@
-# Weather & Currency Analysis
+# Weather & Currency Telegram Bot
 
-## 📌 Problem Statement
-This project analyzes the relationship between weather conditions and USD exchange rate fluctuations.
+## 📌 Project Overview
+This project is an automated Telegram bot that delivers daily weather updates and USD exchange rates to subscribed users.  
+It fetches real-time data from public APIs and sends formatted messages every day at a scheduled time.
 
-## 📊 Dataset
-- Weather data
-- USD exchange rate data
+## ⚙️ Features
+- Daily USD exchange rate (UZS and GBP)
+- Current weather information for:
+  - Tashkent
+  - London
+- Automated daily messages at 07:00
+- User subscription management via Telegram commands
+- Admin notifications for new and removed users
+
+## 📊 Data Sources
+- Weather data: OpenWeatherMap API
+- Currency exchange rates: ExchangeRate API
 
 ## 🛠 Tools & Technologies
 - Python
-- pandas
-- numpy
-- matplotlib
-- seaborn
+- asyncio, aiohttp
+- python-telegram-bot
+- REST APIs
+- JSON file-based storage
+- Task scheduling
 
-## 🔍 Methodology
-- Data cleaning
-- Exploratory Data Analysis (EDA)
-- Correlation analysis
-- Data visualization
+## 🔍 How It Works
+1. Users subscribe via the `/start` command
+2. The bot stores user IDs in a JSON file
+3. Every day at 07:00:
+   - USD exchange rates are fetched
+   - Weather data is collected for Tashkent and London
+4. A formatted message is sent to all active users
+5. Users can unsubscribe using `/stop`
 
-## 📈 Results & Insights
-- Identified key patterns and correlations
-- Visualized trends over time
+## 📈 Key Skills Demonstrated
+- Asynchronous programming in Python
+- API integration and data handling
+- Automation and scheduling
+- Real-world bot deployment logic
+- Clean separation of logic (data, messaging, scheduling)
 
-## 📌 Conclusion
-Weather indicators show certain relationships with currency movement. Further analysis can improve prediction accuracy.
+## ▶️ How to Run the Project
 
-## 📎 How to Run
+### 1. Install dependencies
 ```bash
-pip install pandas numpy matplotlib seaborn
+pip install python-telegram-bot aiohttp schedule
